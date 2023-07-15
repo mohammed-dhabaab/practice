@@ -1,13 +1,11 @@
-[Choose a self-explaining name for your project.]: #
-<h1 align="center">Pixfuler</h1>
+<p align="center">
+  <img src="assets/banner/banner.png" alt="project logo" />
+</p>
 
 [Add short description (one sentance)]: #
 <p align="center">
-  Sample photo editor
+  Sample Photo Editor
 </p>
-
-
-
 
 ## 📂Table of Contents
 - [📂Table of Contents](#table-of-contents)
@@ -21,8 +19,11 @@
 - [🏅Acknowledgments](#acknowledgments)
 
 ## 📋Project Description
-<p align="center">
-Sample photo editor builds using Python with OpenCV, Tkinter, and Pillow libraries. That allows the user to upload an image and modify it with functions provided by OpenCV (resize, rotate, flip, crop, blur) and save it.
+<p>
+Sample photo editor builds using Python with OpenCV, Tkinter, and Pillow libraries. That allows the user to upload an image and modify it with functions provided by OpenCV (resize, rotate, flip, crop, blur) and save it. 
+<br>
+<br>
+Note: The project does not demonstrate my design skills.
 </p>
 
 
@@ -50,7 +51,7 @@ pip install Pillow
 ```
 
 ## 📝Usage
-Just run "app.py" file, after pulling the project
+Just run "app.py" file, after pulling the project.
 
 ## ✍Authors
 - [@Mohammed-Dhabaab](github.com/mohammed-dhabaab)
