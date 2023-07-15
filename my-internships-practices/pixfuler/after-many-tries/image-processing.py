@@ -1,7 +1,6 @@
 import cv2
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
-import numpy as np
 
 
 def get_image_path():
@@ -13,6 +12,16 @@ def get_image_path():
     image_path = askopenfilename(filetypes=[("Image Files", "*.png *.jpg *.jpeg")])
     
     return image_path
+
+def upload_image():
+    image_path = get_image_path()
+    image = cv2.imread(image_path)
+
+    return image
+
+def save_image(self):
+    filename = Tk.filedialog.asksaveasfilename(defaultextension=".jpg")
+    cv2.imwrite(filename, self.image)
 
 def display_image(image):
     # Display the image
@@ -38,16 +47,15 @@ def rotate_image(image, angle):
 
     # Apply rotation to image
     rotated_image = cv2.warpAffine(image, M, (width, height))
-
     return rotated_image
 
 def flip_image_horizontally(image):
     # Flip image horizontally
     flipped_img_horizontal = cv2.flip(image, 1)
-    
+
     return flip_image_horizontally
 
-def flip_image_horizontally(image):
+def flip_image_vertically(image):
     # Flip image vertically
     flipped_img_vertical = cv2.flip(image, 0)
 
@@ -63,10 +71,3 @@ def crop_image(image, x_start, y_start, x_end, y_end):
     cropped_image = image[y_start:y_end, x_start:x_end]
 
     return cropped_image
-
-# # Check if the image was loaded successfully
-# if image is not None:
-#     print('Image was loaded successfully')
-# else:
-#     # Failed to load the image
-#     print('Failed to load image file')

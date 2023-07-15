@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Photo Editor</title>
+    <script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+</head>
+<body>
+    <input type="file" id="fileInput" accept="image/*"/>
+    <br>
+    <br>
+    <button onclick="resizeImage()">Resize</button>
+    <button onclick="rotateImage()">Rotate</button>
+    <button onclick="flipImage()">Flip</button>
+    <button onclick="cropImage()">Crop</button>
+    <button onclick="saveImage()">Save</button>
+    <br>
+    <br>
+    <canvas id="canvas"></canvas>
+    <script>
+        let img;
+        let canvas = document.getElementById('canvas');
+        let ctx = canvas.getContext('2d');
+        let scaleFactor = 1;
+
+        function onOpenCvReady() {
+            document.getElementById('fileInput').addEventListener('change', function() {
+                img = new Image();
+                img.onload = function() {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0, img.width, img.height);
+                    scaleFactor = 1;
+                }
+                img.src = URL.createObjectURL(this.files[0]);
+            });
+        }
+
+        function resizeImage() {
+            scaleFactor = prompt('Enter scale factor (0.1-10):');
+            if (scaleFactor != null && scaleFactor != '') {
+                img.width = img.width * scaleFactor;
+                img.height = img.height * scaleFactor;
+                ctx.drawImage(img, 0, 0, img.width, img.height);
+            }
+        }
+
+        function rotateImage() {
+            let angle = prompt('Enter angle (0-360):');
+            if (angle != null && angle != '') {
+                let rotated_img = new cv.Mat();
+                let center = new cv.Point2(img.width/2, img.height/2);
+                let M = cv.getRotationMatrix2D(center, angle, 1);
+                cv.warpAffine(img, rotated_img, M, new cv.Size(img.width, img.height));
+                ctx.drawImage(cv.imread(rotated_img), 0, 0, img.width, img.height);
+                rotated_img.delete();
+            }
+        }
+
+        function flipImage() {
+            let flipCode = prompt('Enter flip code (-1, 0, or 1):');
+            if (flipCode != null && flipCode != '') {
+                let flipped_img = new cv.Mat();
+                cv.flip(img, flipped_img, flipCode);
+                ctx.drawImage(cv.imread(flipped_img), 0, 0, img.width, img.height);
+                flipped_img.delete();
+            }
+        }
+
+        function cropImage() {
+            let x = prompt('Enter x-coordinate of top-left corner:');
+            let y = prompt('Enter y-coordinate of top-left corner:');
+            let width = prompt('Enter width:');
+            let height = prompt('Enter height:');
+            if (x != null && x != '' && y != null && y != '' && width != null && width != '' && height != null && height != '') {
+                let cropped_img = new cv.Mat();
+                let rect = new cv.Rect(x, y, width, height);
+                cropped_img = img.roi(rect);
+                canvas.width = width;
+                canvas.height = height;
+                ctx.drawImage(cv.imread(cropped_img), 0, 0, width, height);
+                cropped_img.delete();
+            }
+        }
+
+        function saveImage() {
+            let link = document.createElement('a');
+            link.download = 'edited_image.png';
+            link.href = canvas.toDataURL('image/png').replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+            link.click();
+        }
+    </script>
+</body>
+</html>

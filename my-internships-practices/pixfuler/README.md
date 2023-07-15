@@ -1,104 +1,63 @@
-[Add effective prject logo or banner]: #
-<p align="center">
-  <img src="" alt="project logo" />
-</p>
-
-
 [Choose a self-explaining name for your project.]: #
-<h1 align="center">Project Title</h1>
-
-[Add badges]: #
+<h1 align="center">Pixfuler</h1>
 
 [Add short description (one sentance)]: #
-
-[Descriptive GIF or image for your project]: #
 <p align="center">
-  <img src="" alt="project image" />
+  Sample photo editor
 </p>
+
 
 
 
 ## 📂Table of Contents
 - [📂Table of Contents](#table-of-contents)
 - [📋Project Description](#project-description)
-- [📊Features](#features)
 - [⛏️Built Using](#️built-using)
-- [🔢Used By](#used-by)
-- [🎢Roadmap](#roadmap)
 - [🏁 Getting Started](#-getting-started)
   - [🎫Prerequisites](#prerequisites)
-  - [📥Installation](#installation)
 - [📝Usage](#usage)
-- [🔧Running the tests](#running-the-tests)
-- [🔄Updating](#updating)
-- [🚀Deployment](#deployment)
-- [👥Contributing](#contributing)
-- [😉Support](#support)
-- [📈Sponsors](#sponsors)
-- [🎤Backers](#backers)
-- [👀You may also like...](#you-may-also-like)
 - [✍Authors](#authors)
-- [📞Contact](#contact)
 - [💳License](#license)
 - [🏅Acknowledgments](#acknowledgments)
 
 ## 📋Project Description
-
-
-## 📊Features 
+<p align="center">
+Sample photo editor builds using Python with OpenCV, Tkinter, and Pillow libraries. That allows the user to upload an image and modify it with functions provided by OpenCV (resize, rotate, flip, crop, blur) and save it.
+</p>
 
 
 ## ⛏️Built Using
-
-
-## 🔢Used By
-
-
-## 🎢Roadmap
+- [Python](https://www.python.org/): Programming language
 
 
 ## 🏁 Getting Started
 
 
 ### 🎫Prerequisites
+You need the following libraries:
+- [OpenCV](https://opencv.org/)
+```
+pip install opencv-python
+```
+- [Tkinter](https://docs.python.org/3/library/tkinter.html)
+```
+pip install tk
+```
+- [Pillow](https://pypi.org/project/Pillow/)
+```
+pip install Pillow
 
-### 📥Installation
-
+```
 
 ## 📝Usage
-
-
-## 🔧Running the tests
-
-
-## 🔄Updating 
-
-
-## 🚀Deployment
-
-
-## 👥Contributing
-
-
-
-## 😉Support
-
-
-
-## 📈Sponsors
-
-
-## 🎤Backers
-
-## 👀You may also like...
+Just run "app.py" file, after pulling the project
 
 ## ✍Authors
-
-
-## 📞Contact
-
+- [@Mohammed-Dhabaab](github.com/mohammed-dhabaab)
 
 ## 💳License
-
+- [MIT](https://opensource.org/license/mit/)
 
 ## 🏅Acknowledgments
+- [EVC](evc.sa)
+- [Eng.Ibrahem Saber](https://www.linkedin.com/in/ibrahem-elnawasany/)

@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/******************************************************
+            made with ♡ by mohammed dhabaab!
+
+
+                    table of contents
+
+    1.initiation
+    2.typography
+    3.global styles
+        1.general text styles
+        2.general layout
+        3.hamburger menu
+        4.logo/signature styles
+        5.hover state for some elements
+        6.images styles
+        7.some styles
+********************************************************/
+/******************** 1.initiation ********************/
+@import url("https://fonts.googleapis.com/css2?family=Overpass&display=swap");
+/******************** 3.typography ********************/
+p {
+  font-size: 15px;
+}
+
+/******************* 4.global styles *******************/
+html, body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.main__container {
+  height: 100%;
+  width: 100%;
+}
+
+/* 1.general text styles */
+* {
+  color: hsl(0, 0%, 100%);
+  font-family: "Overpass", sans-serif;
+}
+
+/* 5.hover state for some elements */
+/*******************************************************
+                    table of contents
+
+    1.grid classes
+    2.flexbox classes
+    3.gaps
+********************************************************/
+/*********************** 3.grid ***********************/
+.grid__center {
+  display: grid;
+  place-items: center;
+  align-items: center;
+}
+
+/*********************** 3.flex ***********************/
+.flex {
+  display: flex;
+}
+
+
+.flex__justify {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex__align__middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flex__align__middle__center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex__column {
+  display: flex;
+  flex-direction: column;
+}
+
+/*********************** 3.gaps ***********************/
+.gap__50 {
+  gap: 0.438rem;
+}
+
+.gap__100 {
+  gap: 0.875rem;
+}
+
+.gap__200 {
+  gap: 1.25rem;
+}
+
+.gap__300 {
+  gap: 2.5rem;
+}

@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/******************************************************
+            made with ♡ by mohammed dhabaab!
+
+
+                    table of contents
+
+    1.initiation
+    2.typography
+    3.global styles
+        1.general text styles
+        2.general layout
+        3.hamburger menu
+        4.logo/signature styles
+        5.hover state for some elements
+        6.images styles
+        7.some styles
+********************************************************/
+/******************** 1.initiation ********************/
+@import url("https://fonts.googleapis.com/css2?family=Overpass&display=swap");
+/******************** 3.typography ********************/
+p {
+  font-size: 15px;
+}
+
+/******************* 4.global styles *******************/
+html, body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.main__container {
+  height: 100%;
+  width: 100%;
+}
+
+/* 1.general text styles */
+* {
+  color: hsl(0, 0%, 100%);
+  font-family: "Overpass", sans-serif;
+}
+
+/* 5.hover state for some elements */
+.main__container {
+  background-color: hsl(216, 12%, 8%);
+}
+
+.main__container > * {
+  width: 400px;
+}
+
+.rating__state__container {
+  background-color: hsl(213, 19%, 18%);
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.rating__paragraph {
+  color: hsl(217, 12%, 63%);
+}
+
+.rounded {
+  padding: 5px;
+  background-color: hsl(216, 12%, 54%);
+  border-radius: 50%;
+}
+
+.rating__number {
+  width: 34px;
+  height: 34px;
+  padding: 10px;
+  text-align: center;
+  background-color: hsl(216, 12%, 54%);
+  border-radius: 50%;
+}
+
+.rating__submit__button {
+  padding: 10px 20px;
+  background-color: hsl(25, 97%, 53%);
+  border-radius: 20px;
+}
+
+.rating__state__container,
+.thank__state__container {
+  display: none;
+}
+
+.active {
+  display: initial;
+}

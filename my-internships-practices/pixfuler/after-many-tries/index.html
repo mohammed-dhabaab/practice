@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixfuler</title>
+
+    <!-- linking to css files -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- linking to PyScript assets -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <py-config type="toml">
+        packages = ["opencv-python"]
+    </py-config>
+    
+</head>
+<body>
+    <main class="main__container | flex__align__middle__center gap__50">
+        <!-- <header class="header"></header> -->
+
+
+        <section class="body | flex__align__middle__center gap__50">
+            <div class="top__section | flex gap__50">
+                <div class="upload__btn btn">Upload</div>
+                <div class="save__btn btn">Save</div>
+            </div>
+
+            <div class="mid__section | flex__align__middle">
+                <div class="image__canva">
+                    <img id="image" src="../assets/evc-image.png" alt="">
+                </div>
+            </div>
+
+            <div class="bottom__section | flex__justify gap__50">
+                <div class="resize__btn btn">Resize</div>
+                <div class="rotate__btn btn">Rotate</div>
+                <div class="flip_image_horizontally__btn btn" py-click="flip_image_horizontally()">Flip Horizontally</div>
+                <div class="flip_image_vertically__btn btn">Flip Vertically</div>
+                <div class="blur_image__btn btn">Blur</div>
+                <div class="crop_image__btn btn">Crop</div>
+            </div>
+        </section>
+
+
+        <!-- <footer class="footer"></footer> -->
+    </main>
+
+    <py-script src="py.py"></py-script>
+</body>
+</html>
